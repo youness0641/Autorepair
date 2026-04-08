@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Auto Repair – Expert European Auto Care</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+:root{
+  --grey:#8a8a8a;
+  --grey-light:#c2c2c2;
+  --grey-dark:#3a3a3a;
+  --black:#0d0d0d;
+  --black2:#1a1a1a;
+  --black3:#222;
+  --white:#f5f5f5;
+  --accent:#b8860b;
+  --accent2:#d4a017;
+  --red:#c0392b;
+  --font-display:'Bebas Neue',sans-serif;
+  --font-body:'Barlow',sans-serif;
+  --font-cond:'Barlow Condensed',sans-serif;
+  --promo-bg:#1a1a1a;
+  --promo-color:#f5f5f5;
+  --promo-font:'Barlow',sans-serif;
+  --promo-size:13px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);background:var(--black);color:var(--white);overflow-x:hidden;}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-track{background:var(--black);}
+::-webkit-scrollbar-thumb{background:var(--grey-dark);border-radius:3px;}
+
+/* ══════════════════════════════════════════
+   PROMO BAR
+══════════════════════════════════════════ */
+#promo-bar{
+  background:var(--promo-bg);
+  color:var(--promo-color);
+  font-family:var(--promo-font);
+  font-size:var(--promo-size);
+  padding:8px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:8px;
+  position:relative;
+  z-index:100;
+}
+.promo-left{display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+.promo-left span{display:flex;align-items:center;gap:6px;}
+.promo-left span i{color:var(--accent);}
+.promo-socials{display:flex;align-items:center;gap:12px;}
+.promo-socials a{color:var(--promo-color);text-decoration:none;font-size:15px;transition:color .2s;}
+.promo-socials a:hover{color:var(--accent);}
+.dashboard-btn{
+  position:absolute;right:10px;top:50%;transform:translateY(-50%);
+  background:var(--accent);color:#000;border:none;border-radius:4px;
+  font-size:11px;padding:3px 8px;cursor:pointer;font-family:var(--font-body);
+  font-weight:600;z-index:200;
+}
+.dashboard-btn:hover{background:var(--accent2);}
+
+/* ══════════════════════════════════════════
+   HEADER
+══════════════════════════════════════════ */
+#site-header{
+  background:var(--black2);
+  padding:14px 40px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  position:sticky;top:0;z-index:90;
+  border-bottom:1px solid #2a2a2a;
+  box-shadow:0 2px 20px rgba(0,0,0,.6);
+  flex-wrap:wrap;gap:12px;
+}
+.logo-area{display:flex;align-items:center;gap:14px;cursor:pointer;}
+.logo-img{width:60px;height:60px;object-fit:contain;border-radius:4px;}
+.logo-placeholder{
+  width:60px;height:60px;background:var(--grey-dark);border-radius:4px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-display);font-size:11px;color:var(--accent);
+  text-align:center;line-height:1.2;border:1px dashed var(--grey);cursor:pointer;
+}
+.logo-text{font-family:var(--font-display);font-size:26px;color:var(--white);letter-spacing:2px;line-height:1;}
+.logo-text span{color:var(--accent);}
+.header-right{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+.header-phone{display:flex;align-items:center;gap:8px;color:var(--grey-light);font-size:14px;font-weight:500;}
+.header-phone i{color:var(--accent);}
+.btn-visit{
+  background:transparent;border:1px solid var(--grey-dark);color:var(--grey-light);
+  padding:9px 18px;border-radius:3px;font-family:var(--font-cond);font-size:14px;
+  letter-spacing:1px;cursor:pointer;transition:all .2s;text-transform:uppercase;
+}
+.btn-visit:hover{border-color:var(--accent);color:var(--accent);}
+.btn-schedule{
+  background:var(--accent);color:#000;border:none;
+  padding:10px 22px;border-radius:3px;font-family:var(--font-cond);font-size:14px;
+  letter-spacing:1px;cursor:pointer;font-weight:700;text-transform:uppercase;transition:all .2s;
+}
+.btn-schedule:hover{background:var(--accent2);transform:translateY(-1px);}
+
+/* ══════════════════════════════════════════
+   NAV
+══════════════════════════════════════════ */
+#main-nav{
+  background:var(--black3);
+  border-bottom:1px solid #2a2a2a;
+  position:sticky;top:89px;z-index:89;
+}
+.nav-inner{
+  max-width:1200px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 40px;
+}
+.nav-links{display:flex;list-style:none;gap:0;}
+.nav-links li a{
+  display:block;padding:15px 22px;
+  color:var(--grey-light);text-decoration:none;
+  font-family:var(--font-cond);font-size:14px;letter-spacing:1.5px;
+  text-transform:uppercase;font-weight:600;
+  border-bottom:2px solid transparent;transition:all .2s;
+}
+.nav-links li a:hover,.nav-links li a.active{
+  color:var(--accent);border-bottom-color:var(--accent);
+}
+.nav-dashboard-btn{
+  background:transparent;border:1px solid var(--grey-dark);color:var(--grey);
+  padding:5px 12px;border-radius:3px;font-size:11px;cursor:pointer;
+  font-family:var(--font-body);transition:all .2s;
+}
+.nav-dashboard-btn:hover{border-color:var(--accent);color:var(--accent);}
+.hamburger{display:none;background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;padding:10px;}
+
+/* ══════════════════════════════════════════
+   HERO
+══════════════════════════════════════════ */
+#hero{
+  position:relative;min-height:90vh;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1600&q=80') center/cover no-repeat;
+  filter:brightness(.55);
+}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.1) 100%);
+}
+.hero-content{
+  position:relative;z-index:2;
+  max-width:1100px;padding:60px 40px;
+  display:grid;grid-template-columns:1fr 340px;gap:60px;align-items:center;
+}
+.hero-text{}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(184,134,11,.15);border:1px solid var(--accent);
+  color:var(--accent);padding:5px 14px;border-radius:2px;
+  font-family:var(--font-cond);font-size:12px;letter-spacing:2px;
+  text-transform:uppercase;margin-bottom:20px;
+}
+.hero-heading{
+  font-family:var(--font-display);
+  font-size:clamp(38px,5vw,72px);
+  line-height:.95;letter-spacing:2px;
+  color:var(--white);margin-bottom:22px;
+  text-shadow:0 2px 20px rgba(0,0,0,.5);
+}
+.hero-heading span{color:var(--accent);}
+.hero-sub{
+  font-size:16px;color:var(--grey-light);
+  line-height:1.7;max-width:520px;margin-bottom:36px;font-weight:300;
+}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-primary{
+  background:var(--accent);color:#000;border:none;
+  padding:14px 32px;font-family:var(--font-cond);font-size:15px;
+  letter-spacing:1.5px;text-transform:uppercase;font-weight:700;
+  cursor:pointer;border-radius:2px;transition:all .25s;
+}
+.btn-primary:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 8px 25px rgba(184,134,11,.35);}
+.btn-secondary{
+  background:transparent;color:var(--white);
+  border:1px solid rgba(255,255,255,.35);
+  padding:14px 32px;font-family:var(--font-cond);font-size:15px;
+  letter-spacing:1.5px;text-transform:uppercase;font-weight:600;
+  cursor:pointer;border-radius:2px;transition:all .25s;
+}
+.btn-secondary:hover{border-color:var(--white);background:rgba(255,255,255,.07);}
+
+/* Service Finder Card */
+.service-finder{
+  background:rgba(10,10,10,.92);
+  border:1px solid #2a2a2a;
+  border-top:3px solid var(--accent);
+  border-radius:4px;padding:28px;
+  backdrop-filter:blur(10px);
+}
+.sf-heading{
+  font-family:var(--font-display);font-size:22px;
+  color:var(--white);letter-spacing:1px;margin-bottom:6px;
+}
+.sf-sub{font-size:12px;color:var(--grey);margin-bottom:20px;letter-spacing:1px;text-transform:uppercase;}
+.sf-items{display:flex;flex-direction:column;gap:10px;margin-bottom:20px;}
+.sf-item{
+  display:flex;align-items:center;gap:12px;
+  padding:12px 14px;background:rgba(255,255,255,.04);
+  border:1px solid #2e2e2e;border-radius:3px;
+  cursor:pointer;transition:all .2s;
+}
+.sf-item:hover{border-color:var(--accent);background:rgba(184,134,11,.08);}
+.sf-item i{color:var(--accent);font-size:16px;width:20px;text-align:center;}
+.sf-item span{font-size:13px;color:var(--grey-light);font-weight:500;}
+.sf-btn{
+  width:100%;background:var(--accent);color:#000;border:none;
+  padding:12px;font-family:var(--font-cond);font-size:14px;
+  letter-spacing:1.5px;text-transform:uppercase;font-weight:700;
+  cursor:pointer;border-radius:2px;transition:all .2s;
+}
+.sf-btn:hover{background:var(--accent2);}
+
+/* ══════════════════════════════════════════
+   AUTO PARTS / SHOP
+══════════════════════════════════════════ */
+#shop{background:var(--black2);padding:80px 40px;}
+.section-label{
+  display:inline-block;font-family:var(--font-cond);font-size:12px;
+  letter-spacing:3px;text-transform:uppercase;color:var(--accent);
+  border-left:3px solid var(--accent);padding-left:12px;margin-bottom:12px;
+}
+.section-title{
+  font-family:var(--font-display);font-size:clamp(32px,4vw,52px);
+  color:var(--white);letter-spacing:2px;margin-bottom:10px;
+}
+.section-sub{color:var(--grey);font-size:15px;max-width:600px;font-weight:300;line-height:1.7;}
+.section-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:40px;flex-wrap:wrap;gap:16px;}
+.shop-grid{
+  max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:22px;
+}
+.shop-card{
+  background:var(--black3);border:1px solid #2a2a2a;border-radius:4px;
+  overflow:hidden;transition:all .25s;position:relative;
+}
+.shop-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.5);}
+.shop-img{
+  width:100%;aspect-ratio:4/3;object-fit:cover;
+  background:var(--grey-dark);display:flex;align-items:center;justify-content:center;
+  font-size:40px;color:var(--grey);
+}
+.shop-img img{width:100%;height:100%;object-fit:cover;}
+.shop-img-placeholder{
+  width:100%;aspect-ratio:4/3;background:linear-gradient(135deg,#1a1a1a,#2a2a2a);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:8px;color:var(--grey);cursor:pointer;
+}
+.shop-img-placeholder i{font-size:32px;color:var(--grey-dark);}
+.shop-img-placeholder span{font-size:12px;letter-spacing:1px;}
+.shop-info{padding:16px;}
+.shop-name{font-family:var(--font-cond);font-size:16px;color:var(--white);font-weight:600;letter-spacing:.5px;margin-bottom:6px;}
+.shop-price{font-family:var(--font-display);font-size:22px;color:var(--accent);letter-spacing:1px;margin-bottom:14px;}
+.btn-whatsapp{
+  width:100%;background:#25D366;color:#fff;border:none;
+  padding:10px;border-radius:2px;font-family:var(--font-cond);font-size:13px;
+  letter-spacing:1px;text-transform:uppercase;font-weight:700;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;gap:8px;transition:all .2s;
+}
+.btn-whatsapp:hover{background:#1ebe57;}
+
+/* ══════════════════════════════════════════
+   EUROPEAN AUTO CARE
+══════════════════════════════════════════ */
+#european{
+  background:var(--black);
+  padding:90px 40px;
+  position:relative;overflow:hidden;
+}
+.euro-pattern{
+  position:absolute;inset:0;
+  background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.015) 0,rgba(255,255,255,.015) 1px,transparent 0,transparent 50%);
+  background-size:30px 30px;
+  pointer-events:none;
+}
+.euro-inner{max-width:1100px;margin:0 auto;text-align:center;position:relative;z-index:2;}
+.euro-title{font-family:var(--font-display);font-size:clamp(38px,5vw,68px);color:var(--white);letter-spacing:4px;margin-bottom:18px;}
+.euro-title span{color:var(--accent);}
+.euro-sub{font-size:16px;color:var(--grey);max-width:680px;margin:0 auto 50px;line-height:1.8;font-weight:300;}
+.brand-logos{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:40px;
+  padding:30px;border-top:1px solid #2a2a2a;border-bottom:1px solid #2a2a2a;
+}
+.brand-logo{
+  font-family:var(--font-display);font-size:22px;color:var(--grey-dark);
+  letter-spacing:3px;transition:color .2s;cursor:default;user-select:none;
+}
+.brand-logo:hover{color:var(--grey);}
+
+/* ══════════════════════════════════════════
+   WHY CHOOSE US
+══════════════════════════════════════════ */
+#why{background:var(--black2);padding:90px 40px;}
+.why-inner{
+  max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;
+}
+.why-text{}
+.why-points{margin-top:32px;display:flex;flex-direction:column;gap:20px;}
+.why-point{
+  display:flex;gap:16px;align-items:flex-start;
+  padding:20px;background:var(--black3);border:1px solid #2a2a2a;border-radius:3px;
+  transition:border-color .2s;
+}
+.why-point:hover{border-color:var(--accent);}
+.why-icon{
+  width:42px;height:42px;background:rgba(184,134,11,.12);border-radius:3px;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.why-icon i{color:var(--accent);font-size:18px;}
+.why-point-text h4{font-family:var(--font-cond);font-size:16px;color:var(--white);letter-spacing:.5px;margin-bottom:5px;}
+.why-point-text p{font-size:13px;color:var(--grey);line-height:1.6;}
+.why-photo{position:relative;}
+.why-photo-img{
+  width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:4px;
+  background:linear-gradient(135deg,#1a1a1a,#2a2a2a);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--grey);font-size:50px;overflow:hidden;
+}
+.why-photo-img img{width:100%;height:100%;object-fit:cover;}
+.why-stat-card{
+  position:absolute;bottom:-20px;left:-20px;
+  background:var(--accent);color:#000;
+  padding:20px 24px;border-radius:3px;
+  font-family:var(--font-display);
+}
+.why-stat-num{font-size:42px;line-height:1;display:block;}
+.why-stat-label{font-size:13px;font-family:var(--font-body);font-weight:600;letter-spacing:1px;}
+
+/* ══════════════════════════════════════════
+   FIND US
+══════════════════════════════════════════ */
+#find-us{background:var(--black);padding:80px 40px;}
+.findus-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1.6fr;gap:50px;align-items:start;}
+.findus-info{padding-top:10px;}
+.contact-items{margin-top:28px;display:flex;flex-direction:column;gap:16px;}
+.contact-item{display:flex;gap:14px;align-items:flex-start;}
+.contact-item i{color:var(--accent);font-size:18px;margin-top:2px;width:20px;}
+.contact-item div h4{font-family:var(--font-cond);font-size:15px;color:var(--white);letter-spacing:.5px;margin-bottom:3px;}
+.contact-item div p{font-size:13px;color:var(--grey);line-height:1.6;}
+.map-container{
+  border-radius:4px;overflow:hidden;border:1px solid #2a2a2a;
+  aspect-ratio:16/10;background:var(--black3);
+}
+.map-container iframe{width:100%;height:100%;border:none;filter:grayscale(60%) invert(90%) hue-rotate(180deg);}
+
+/* ══════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════ */
+#footer{background:#080808;border-top:1px solid #2a2a2a;padding:60px 40px 30px;}
+.footer-grid{
+  max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:50px;
+  margin-bottom:50px;
+}
+.footer-brand .logo-text{font-size:28px;margin-bottom:14px;display:block;}
+.footer-brand p{font-size:13px;color:var(--grey);line-height:1.8;max-width:280px;margin-bottom:20px;}
+.footer-socials{display:flex;gap:12px;}
+.footer-social-link{
+  width:36px;height:36px;background:var(--grey-dark);border-radius:3px;
+  display:flex;align-items:center;justify-content:center;color:var(--grey-light);
+  text-decoration:none;font-size:14px;transition:all .2s;
+}
+.footer-social-link:hover{background:var(--accent);color:#000;}
+.footer-col h4{
+  font-family:var(--font-cond);font-size:13px;letter-spacing:2px;
+  text-transform:uppercase;color:var(--accent);margin-bottom:18px;
+}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.footer-col ul li a{
+  font-size:13px;color:var(--grey);text-decoration:none;transition:color .2s;
+}
+.footer-col ul li a:hover{color:var(--white);}
+.footer-bottom{
+  max-width:1200px;margin:0 auto;
+  border-top:1px solid #1e1e1e;padding-top:24px;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;
+}
+.footer-bottom p{font-size:12px;color:var(--grey-dark);}
+
+/* ══════════════════════════════════════════
+   BOOKING POPUP
+══════════════════════════════════════════ */
+.modal-overlay{
+  position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:9999;
+  display:none;align-items:flex-start;justify-content:center;
+  overflow-y:auto;padding:30px 16px;
+  backdrop-filter:blur(4px);
+}
+.modal-overlay.open{display:flex;}
+.modal-box{
+  background:var(--black2);border:1px solid #2a2a2a;border-top:3px solid var(--accent);
+  border-radius:6px;width:100%;max-width:680px;padding:36px;
+  position:relative;margin:auto;
+}
+.modal-close{
+  position:absolute;top:16px;right:18px;background:none;border:none;
+  color:var(--grey);font-size:22px;cursor:pointer;transition:color .2s;
+}
+.modal-close:hover{color:var(--white);}
+.modal-title{font-family:var(--font-display);font-size:30px;color:var(--white);letter-spacing:2px;margin-bottom:4px;}
+.modal-sub{font-size:13px;color:var(--grey);margin-bottom:28px;}
+.form-section-title{
+  font-family:var(--font-cond);font-size:13px;letter-spacing:2px;
+  text-transform:uppercase;color:var(--accent);
+  border-bottom:1px solid #2a2a2a;padding-bottom:8px;margin-bottom:18px;margin-top:24px;
+}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;}
+.form-group label{font-size:12px;color:var(--grey-light);letter-spacing:.5px;font-weight:600;}
+.form-group input,.form-group select,.form-group textarea{
+  background:var(--black3);border:1px solid #333;color:var(--white);
+  padding:11px 14px;border-radius:3px;font-family:var(--font-body);font-size:14px;
+  transition:border-color .2s;outline:none;
+}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--accent);}
+.form-group select option{background:var(--black3);}
+.form-group textarea{resize:vertical;min-height:90px;}
+.upload-area{
+  border:1px dashed #444;border-radius:3px;padding:20px;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  cursor:pointer;transition:border-color .2s;
+}
+.upload-area:hover{border-color:var(--accent);}
+.upload-area i{font-size:26px;color:var(--grey);}
+.upload-area span{font-size:12px;color:var(--grey);}
+.btn-submit{
+  width:100%;background:var(--accent);color:#000;border:none;
+  padding:14px;font-family:var(--font-cond);font-size:15px;letter-spacing:2px;
+  text-transform:uppercase;font-weight:700;cursor:pointer;border-radius:3px;
+  margin-top:20px;transition:all .2s;
+}
+.btn-submit:hover{background:var(--accent2);transform:translateY(-1px);}
+
+/* ══════════════════════════════════════════
+   DASHBOARD PANELS
+══════════════════════════════════════════ */
+.dash-overlay{
+  position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:10000;
+  display:none;align-items:center;justify-content:center;
+  backdrop-filter:blur(4px);padding:20px;
+}
+.dash-overlay.open{display:flex;}
+.dash-box{
+  background:#161616;border:1px solid #2e2e2e;border-top:3px solid var(--accent);
+  border-radius:6px;width:100%;max-width:520px;max-height:90vh;
+  overflow-y:auto;padding:30px;position:relative;
+}
+.dash-title{font-family:var(--font-display);font-size:24px;color:var(--white);letter-spacing:2px;margin-bottom:6px;}
+.dash-sub{font-size:12px;color:var(--grey);margin-bottom:24px;}
+.dash-close{
+  position:absolute;top:14px;right:16px;background:none;border:none;
+  color:var(--grey);font-size:20px;cursor:pointer;transition:color .2s;
+}
+.dash-close:hover{color:var(--white);}
+.dash-group{margin-bottom:18px;}
+.dash-group label{display:block;font-size:12px;color:var(--grey-light);margin-bottom:6px;font-weight:600;letter-spacing:.5px;}
+.dash-group input[type=text],.dash-group input[type=color],.dash-group select,.dash-group input[type=number]{
+  width:100%;background:#1e1e1e;border:1px solid #333;color:var(--white);
+  padding:10px 12px;border-radius:3px;font-family:var(--font-body);font-size:13px;outline:none;
+}
+.dash-group input[type=color]{height:40px;padding:4px;cursor:pointer;}
+.dash-group input:focus,.dash-group select:focus{border-color:var(--accent);}
+.dash-apply{
+  width:100%;background:var(--accent);color:#000;border:none;
+  padding:12px;border-radius:3px;font-family:var(--font-cond);
+  font-size:14px;letter-spacing:1px;text-transform:uppercase;font-weight:700;cursor:pointer;
+  margin-top:10px;transition:all .2s;
+}
+.dash-apply:hover{background:var(--accent2);}
+.dash-sep{border:none;border-top:1px solid #2a2a2a;margin:20px 0;}
+.dash-nav-item{
+  display:flex;align-items:center;gap:10px;margin-bottom:10px;
+  background:#1e1e1e;border:1px solid #2a2a2a;border-radius:3px;padding:10px 14px;
+}
+.dash-nav-item input[type=text]{flex:1;background:transparent;border:none;color:var(--white);font-size:13px;outline:none;}
+.dash-nav-item input[type=url]{flex:1;background:transparent;border:none;color:var(--grey-light);font-size:12px;outline:none;}
+.dash-nav-item label{font-size:11px;color:var(--grey);white-space:nowrap;}
+.shop-dash-item{
+  background:#1e1e1e;border:1px solid #2a2a2a;border-radius:3px;
+  padding:14px;margin-bottom:12px;
+}
+.shop-dash-item-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px;}
+.shop-dash-item label{font-size:11px;color:var(--grey);display:block;margin-bottom:4px;}
+.shop-dash-item input{width:100%;background:#111;border:1px solid #333;color:var(--white);padding:7px 10px;border-radius:3px;font-size:12px;outline:none;}
+.add-item-btn{
+  width:100%;background:transparent;border:1px dashed #444;color:var(--grey);
+  padding:10px;border-radius:3px;font-family:var(--font-cond);font-size:13px;
+  cursor:pointer;margin-top:8px;transition:all .2s;letter-spacing:1px;
+}
+.add-item-btn:hover{border-color:var(--accent);color:var(--accent);}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
+@media(max-width:1024px){
+  .hero-content{grid-template-columns:1fr;gap:40px;}
+  .service-finder{max-width:480px;}
+  .why-inner{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  .findus-inner{grid-template-columns:1fr;}
+}
+@media(max-width:768px){
+  #site-header{padding:12px 20px;}
+  .nav-inner{padding:0 20px;}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--black2);flex-direction:column;border-bottom:1px solid #2a2a2a;z-index:88;}
+  .nav-links.open{display:flex;}
+  .nav-links li a{padding:14px 20px;border-bottom:1px solid #1e1e1e;}
+  .hamburger{display:block;}
+  .shop-grid{grid-template-columns:repeat(2,1fr);}
+  .form-row{grid-template-columns:1fr;}
+  .hero-content{padding:40px 20px;}
+  #shop,#european,#why,#find-us,#footer{padding:60px 20px;}
+  .footer-grid{grid-template-columns:1fr;}
+  .why-stat-card{left:0;bottom:-10px;}
+}
+@media(max-width:480px){
+  .shop-grid{grid-template-columns:1fr;}
+  .brand-logos{gap:24px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ PROMO BAR ══ -->
+<div id="promo-bar">
+  <div class="promo-left">
+    <span id="promo-location"><i class="fa fa-map-marker-alt"></i><span id="promo-loc-text">123 Auto Street, City, Country</span></span>
+    <span id="promo-phone-wrap"><i class="fa fa-phone"></i><span id="promo-phone-text">+1 (555) 123-4567</span></span>
+  </div>
+  <div class="promo-socials" id="promo-socials">
+    <a href="#" id="promo-fb" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" id="promo-ig" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="#" id="promo-wa" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="#" id="promo-yt" title="YouTube"><i class="fab fa-youtube"></i></a>
+    <a href="#" id="promo-tk" title="TikTok"><i class="fab fa-tiktok"></i></a>
+  </div>
+  <button class="dashboard-btn" onclick="openDash('dash-promo')">⚙ Edit Bar</button>
+</div>
+
+<!-- ══ HEADER ══ -->
+<header id="site-header">
+  <div class="logo-area" onclick="openDash('dash-header')">
+    <div class="logo-placeholder" id="logo-display" title="Click to edit logo">
+      <span>YOUR<br>LOGO</span>
+    </div>
+    <div>
+      <div class="logo-text" id="header-logo-text">AUTO<span id="header-logo-span">REPAIR</span></div>
+      <div style="font-size:11px;color:var(--grey);letter-spacing:2px;">EUROPEAN SPECIALISTS</div>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="header-phone"><i class="fa fa-phone"></i><span id="header-phone-text">+1 (555) 123-4567</span></div>
+    <button class="btn-visit" onclick="scrollToSection('find-us')">Visit Our Shop</button>
+    <button class="btn-schedule" onclick="openBooking()">Schedule Service</button>
+  </div>
+</header>
+
+<!-- ══ NAV ══ -->
+<nav id="main-nav">
+  <div class="nav-inner">
+    <button class="hamburger" onclick="toggleNav()"><i class="fa fa-bars"></i></button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#" onclick="openBooking();return false;" id="nav-repair">Auto Repair</a></li>
+      <li><a href="#" onclick="openBooking();return false;" id="nav-maintenance">Auto Maintenance</a></li>
+      <li><a href="#shop" onclick="closeNav()" id="nav-accessories">Accessories</a></li>
+      <li><a href="#find-us" onclick="closeNav()" id="nav-findus">Find Us</a></li>
+      <li><a href="https://www.google.com/maps" target="_blank" id="nav-clients">Clients</a></li>
+    </ul>
+    <button class="nav-dashboard-btn" onclick="openDash('dash-nav')">⚙ Edit Menu</button>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="hero-bg" id="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge"><i class="fa fa-star"></i> <span id="hero-badge-text">Certified European Specialists</span></div>
+      <h1 class="hero-heading" id="hero-heading">WHATEVER <span>MAKE OR MODEL</span> YOU DRIVE WE FIX IT!</h1>
+      <p class="hero-sub" id="hero-sub">Protect your investment. Save on trusted repairs for your luxury vehicle.</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="openBooking()" id="hero-btn1">Schedule Service</button>
+        <button class="btn-secondary" onclick="scrollToSection('find-us')" id="hero-btn2">Visit Our Shop</button>
+      </div>
+    </div>
+    <div class="service-finder">
+      <div class="sf-heading" id="sf-heading">Service Finder</div>
+      <div class="sf-sub">What do you need today?</div>
+      <div class="sf-items" id="sf-items">
+        <div class="sf-item" onclick="openBooking()"><i class="fa fa-stethoscope"></i><span>Diagnostic Professional</span></div>
+        <div class="sf-item" onclick="openBooking()"><i class="fa fa-microchip"></i><span>Programmation Cartographic Motor</span></div>
+        <div class="sf-item" onclick="openBooking()"><i class="fa fa-satellite-dish"></i><span>GPS CarPlay</span></div>
+        <div class="sf-item" onclick="openBooking()"><i class="fa fa-smog"></i><span>DPF / EGR / AdBlue</span></div>
+      </div>
+      <button class="sf-btn" onclick="openBooking()">View All Services →</button>
+    </div>
+  </div>
+  <button class="dashboard-btn" style="top:14px;right:14px;transform:none;" onclick="openDash('dash-hero')">⚙ Edit Hero</button>
+</section>
+
+<!-- ══ AUTO PARTS SHOP ══ -->
+<section id="shop">
+  <div class="section-header" style="max-width:1200px;margin:0 auto 40px;">
+    <div>
+      <div class="section-label">Auto Parts for Sale</div>
+      <h2 class="section-title">Premium Parts & Accessories</h2>
+      <p class="section-sub">Quality parts, great prices. Order via WhatsApp for fast delivery.</p>
+    </div>
+    <button class="dashboard-btn" style="position:static;transform:none;" onclick="openDash('dash-shop')">⚙ Edit Products</button>
+  </div>
+  <div class="shop-grid" id="shop-grid"></div>
+</section>
+
+<!-- ══ EUROPEAN AUTO CARE ══ -->
+<section id="european">
+  <div class="euro-pattern"></div>
+  <div class="euro-inner">
+    <div class="section-label" style="display:block;text-align:center;border-left:none;border-bottom:1px solid var(--accent);padding:0 0 8px 0;margin-bottom:16px;">Premium Service</div>
+    <h2 class="euro-title">EXPERT <span>EUROPEAN</span> AUTO CARE</h2>
+    <p class="euro-sub" id="euro-sub">Your vehicle deserves precision service, certified expertise, and premium attention. We specialize in European imports and performance vehicles.</p>
+    <div class="brand-logos" id="brand-logos">
+      <div class="brand-logo">BMW</div>
+      <div class="brand-logo">MERCEDES</div>
+      <div class="brand-logo">AUDI</div>
+      <div class="brand-logo">VOLKSWAGEN</div>
+      <div class="brand-logo">PORSCHE</div>
+      <div class="brand-logo">VOLVO</div>
+      <div class="brand-logo">PEUGEOT</div>
+      <div class="brand-logo">RENAULT</div>
+      <div class="brand-logo">ALFA ROMEO</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHY CHOOSE US ══ -->
+<section id="why">
+  <div class="why-inner">
+    <div class="why-text">
+      <div class="section-label">Why Us</div>
+      <h2 class="section-title" id="why-title">Why Choose <span style="color:var(--accent)">Us?</span></h2>
+      <p class="section-sub" id="why-sub">We combine decades of experience with cutting-edge technology to deliver unmatched automotive service.</p>
+      <div class="why-points" id="why-points">
+        <div class="why-point">
+          <div class="why-icon"><i class="fa fa-certificate"></i></div>
+          <div class="why-point-text">
+            <h4>Certified Technicians</h4>
+            <p>Our team holds factory certifications for all major European brands ensuring expert-level repairs.</p>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-icon"><i class="fa fa-tools"></i></div>
+          <div class="why-point-text">
+            <h4>Latest Diagnostic Equipment</h4>
+            <p>We use OEM-grade diagnostic tools to pinpoint issues quickly and accurately.</p>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-icon"><i class="fa fa-shield-alt"></i></div>
+          <div class="why-point-text">
+            <h4>12-Month Warranty</h4>
+            <p>Every repair comes backed by our comprehensive parts and labour guarantee.</p>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-icon"><i class="fa fa-clock"></i></div>
+          <div class="why-point-text">
+            <h4>On-Time Delivery</h4>
+            <p>We respect your time with accurate repair timelines and real-time status updates.</p>
+          </div>
+        </div>
+      </div>
+      <button class="dashboard-btn" style="position:static;transform:none;margin-top:16px;" onclick="openDash('dash-why')">⚙ Edit Section</button>
+    </div>
+    <div class="why-photo">
+      <div class="why-photo-img" id="why-photo-wrap">
+        <img id="why-img" src="https://images.unsplash.com/photo-1599256872237-5dcc0fbe9668?w=800&q=80" alt="Mechanic at work" style="width:100%;height:100%;object-fit:cover;"/>
+      </div>
+      <div class="why-stat-card">
+        <span class="why-stat-num" id="why-stat-num">15+</span>
+        <span class="why-stat-label" id="why-stat-label">Years Experience</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FIND US ══ -->
+<section id="find-us">
+  <div class="findus-inner">
+    <div class="findus-info">
+      <div class="section-label">Location</div>
+      <h2 class="section-title">Find Our Shop</h2>
+      <p class="section-sub">Come visit us for a free inspection or book online and we'll see you soon.</p>
+      <div class="contact-items">
+        <div class="contact-item"><i class="fa fa-map-marker-alt"></i><div><h4>Address</h4><p id="footer-address">123 Auto Street, City, Country</p></div></div>
+        <div class="contact-item"><i class="fa fa-phone"></i><div><h4>Phone</h4><p id="footer-phone">+1 (555) 123-4567</p></div></div>
+        <div class="contact-item"><i class="fa fa-envelope"></i><div><h4>Email</h4><p id="footer-email">info@autorepair.com</p></div></div>
+        <div class="contact-item"><i class="fa fa-clock"></i><div><h4>Hours</h4><p id="footer-hours">Mon–Sat 8:00am – 6:00pm<br>Sunday: Closed</p></div></div>
+      </div>
+    </div>
+    <div class="map-container">
+      <iframe id="map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.7!2d-7.9!3d31.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDM2JzAwLjAiTiA3wrA1NCcwMC4wIlc!5e0!3m2!1sen!2s!4v1600000000000!5m2!1sen!2s" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer id="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="logo-text">AUTO<span style="color:var(--accent)">REPAIR</span></span>
+      <p>Expert European automotive service. Precision repairs, certified expertise, and premium attention for every vehicle we touch.</p>
+      <div class="footer-socials">
+        <a class="footer-social-link" href="#"><i class="fab fa-facebook-f"></i></a>
+        <a class="footer-social-link" href="#"><i class="fab fa-instagram"></i></a>
+        <a class="footer-social-link" href="#"><i class="fab fa-whatsapp"></i></a>
+        <a class="footer-social-link" href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#" onclick="openBooking();return false;">Auto Repair</a></li>
+        <li><a href="#" onclick="openBooking();return false;">Auto Maintenance</a></li>
+        <li><a href="#" onclick="openBooking();return false;">Diagnostic</a></li>
+        <li><a href="#" onclick="openBooking();return false;">ECU Programming</a></li>
+        <li><a href="#" onclick="openBooking();return false;">DPF / EGR / AdBlue</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#find-us">Find Us</a></li>
+        <li><a href="https://www.google.com/maps" target="_blank">Reviews</a></li>
+        <li><a href="#shop">Parts & Accessories</a></li>
+        <li><a href="#why">About Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="#">+1 (555) 123-4567</a></li>
+        <li><a href="#">info@autorepair.com</a></li>
+        <li><a href="#find-us">123 Auto Street, City</a></li>
+        <li><a href="#">Mon–Sat 8am–6pm</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 AutoRepair. All rights reserved.</p>
+    <p>Built for precision, driven by passion.</p>
+  </div>
+</footer>
+
+<!-- ══ BOOKING POPUP ══ -->
+<div class="modal-overlay" id="booking-modal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeBooking()"><i class="fa fa-times"></i></button>
+    <div class="modal-title">Schedule Service</div>
+    <div class="modal-sub">Fill in your details and we'll confirm your appointment shortly.</div>
+
+    <div class="form-section-title">Personal Information</div>
+    <div class="form-row">
+      <div class="form-group"><label>Full Name *</label><input type="text" placeholder="John Doe"/></div>
+      <div class="form-group"><label>Phone Number *</label><input type="text" placeholder="+1 (555) 000-0000"/></div>
+    </div>
+
+    <div class="form-section-title">Vehicle Information</div>
+    <div class="form-row">
+      <div class="form-group"><label>Year *</label><input type="text" placeholder="e.g. 2020"/></div>
+      <div class="form-group"><label>Brand *</label><input type="text" placeholder="e.g. BMW"/></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label>Model *</label><input type="text" placeholder="e.g. 5 Series"/></div>
+      <div class="form-group"><label>Mileage (optional)</label><input type="text" placeholder="e.g. 45,000 km"/></div>
+    </div>
+
+    <div class="form-section-title">Service & Appointment</div>
+    <div class="form-group">
+      <label>Service Needed *</label>
+      <select>
+        <option value="">Select a service...</option>
+        <option>Diagnostic Professional</option>
+        <option>ECU / Cartographic Programming</option>
+        <option>GPS CarPlay Installation</option>
+        <option>DPF / EGR / AdBlue Service</option>
+        <option>General Repair</option>
+        <option>Maintenance Service</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label>Preferred Date *</label><input type="date"/></div>
+      <div class="form-group"><label>Preferred Time *</label><input type="time"/></div>
+    </div>
+    <div class="form-group"><label>Additional Notes</label><textarea placeholder="Any other details we should know..."></textarea></div>
+    <div class="upload-area" onclick="document.getElementById('file-upload').click()">
+      <i class="fa fa-camera"></i>
+      <span>Add Photo or Video (optional)</span>
+      <span style="font-size:11px;color:#555">Click to upload</span>
+      <input type="file" id="file-upload" accept="image/*,video/*" multiple style="display:none" onchange="handleUpload(this)"/>
+    </div>
+    <div id="upload-preview" style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;"></div>
+    <button class="btn-submit" onclick="submitBooking()">Confirm Booking</button>
+  </div>
+</div>
+
+<!-- ══ DASHBOARD: PROMO BAR ══ -->
+<div class="dash-overlay" id="dash-promo">
+  <div class="dash-box">
+    <button class="dash-close" onclick="closeDash('dash-promo')"><i class="fa fa-times"></i></button>
+    <div class="dash-title">Promo Bar</div>
+    <div class="dash-sub">Customize the top announcement bar.</div>
+    <div class="dash-group"><label>Location Text</label><input type="text" id="d-promo-loc" value="123 Auto Street, City, Country"/></div>
+    <div class="dash-group"><label>Phone Number</label><input type="text" id="d-promo-phone" value="+1 (555) 123-4567"/></div>
+    <hr class="dash-sep"/>
+    <div class="dash-group"><label>Facebook URL</label><input type="text" id="d-promo-fb" value="#"/></div>
+    <div class="dash-group"><label>Instagram URL</label><input type="text" id="d-promo-ig" value="#"/></div>
+    <div class="dash-group"><label>WhatsApp URL</label><input type="text" id="d-promo-wa" value="#"/></div>
+    <div class="dash-group"><label>YouTube URL</label><input type="text" id="d-promo-yt" value="#"/></div>
+    <div class="dash-group"><label>TikTok URL</label><input type="text" id="d-promo-tk" value="#"/></div>
+    <hr class="dash-sep"/>
+    <div class="dash-group"><label>Background Color</label><input type="color" id="d-promo-bg" value="#1a1a1a"/></div>
+    <div class="dash-group"><label>Text Color</label><input type="color" id="d-promo-color" value="#f5f5f5"/></div>
+    <div class="dash-group"><label>Font</label>
+      <select id="d-promo-font">
+        <option value="'Barlow',sans-serif">Barlow</option>
+        <option value="'Barlow Condensed',sans-serif">Barlow Condensed</option>
+        <option value="'Bebas Neue',sans-serif">Bebas Neue</option>
+        <option value="Georgia,serif">Georgia</option>
+        <option value="'Courier New',monospace">Courier New</option>
+      </select>
+    </div>
+    <div class="dash-group"><label>Font Size (px)</label><input type="number" id="d-promo-size" value="13" min="10" max="20"/></div>
+    <button class="dash-apply" onclick="applyPromo()">Apply Changes</button>
+  </div>
+</div>
+
+<!-- ══ DASHBOARD: HEADER ══ -->
+<div class="dash-overlay" id="dash-header">
+  <div class="dash-box">
+    <button class="dash-close" onclick="closeDash('dash-header')"><i class="fa fa-times"></i></button>
+    <div class="dash-title">Header & Logo</div>
+    <div class="dash-sub">Edit your logo and header details.</div>
+    <div class="dash-group"><label>Logo Image URL</label><input type="text" id="d-logo-url" placeholder="https://yourlogo.com/logo.png"/></div>
+    <div class="dash-group"><label>Brand Name (Part 1)</label><input type="text" id="d-brand1" value="AUTO"/></div>
+    <div class="dash-group"><label>Brand Name (Part 2, colored)</label><input type="text" id="d-brand2" value="REPAIR"/></div>
+    <div class="dash-group"><label>Header Phone</label><input type="text" id="d-hdr-phone" value="+1 (555) 123-4567"/></div>
+    <div class="dash-group"><label>Accent Color</label><input type="color" id="d-accent" value="#b8860b"/></div>
+    <button class="dash-apply" onclick="applyHeader()">Apply Changes</button>
+  </div>
+</div>
+
+<!-- ══ DASHBOARD: NAV ══ -->
+<div class="dash-overlay" id="dash-nav">
+  <div class="dash-box">
+    <button class="dash-close" onclick="closeDash('dash-nav')"><i class="fa fa-times"></i></button>
+    <div class="dash-title">Navigation Menu</div>
+    <div class="dash-sub">Edit menu item labels and links.</div>
+    <div id="nav-dash-items">
+      <div class="dash-nav-item"><label>Auto Repair</label><input type="text" id="nav-l1" value="Auto Repair"/><label>URL</label><input type="url" id="nav-u1" value="#"/></div>
+      <div class="dash-nav-item"><label>Maintenance</label><input type="text" id="nav-l2" value="Auto Maintenance"/><label>URL</label><input type="url" id="nav-u2" value="#"/></div>
+      <div class="dash-nav-item"><label>Accessories</label><input type="text" id="nav-l3" value="Accessories"/><label>URL</label><input type="url" id="nav-u3" value="#shop"/></div>
+      <div class="dash-nav-item"><label>Find Us</label><input type="text" id="nav-l4" value="Find Us"/><label>URL</label><input type="url" id="nav-u4" value="#find-us"/></div>
+      <div class="dash-nav-item"><label>Clients</label><input type="text" id="nav-l5" value="Clients"/><label>URL</label><input type="url" id="nav-u5" value="https://www.google.com/maps"/></div>
+    </div>
+    <button class="dash-apply" onclick="applyNav()">Apply Changes</button>
+  </div>
+</div>
+
+<!-- ══ DASHBOARD: HERO ══ -->
+<div class="dash-overlay" id="dash-hero">
+  <div class="dash-box">
+    <button class="dash-close" onclick="closeDash('dash-hero')"><i class="fa fa-times"></i></button>
+    <div class="dash-title">Hero Section</div>
+    <div class="dash-sub">Edit the main hero content.</div>
+    <div class="dash-group"><label>Background Image URL</label><input type="text" id="d-hero-bg" value="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1600&q=80"/></div>
+    <div class="dash-group"><label>Badge Text</label><input type="text" id="d-hero-badge" value="Certified European Specialists"/></div>
+    <div class="dash-group"><label>Main Heading</label><input type="text" id="d-hero-h" value="WHATEVER MAKE OR MODEL YOU DRIVE WE FIX IT!"/></div>
+    <div class="dash-group"><label>Subtext</label><input type="text" id="d-hero-sub" value="Protect your investment. Save on trusted repairs for your luxury vehicle."/></div>
+    <div class="dash-group"><label>Primary Button</label><input type="text" id="d-hero-btn1" value="Schedule Service"/></div>
+    <div class="dash-group"><label>Secondary Button</label><input type="text" id="d-hero-btn2" value="Visit Our Shop"/></div>
+    <div class="dash-group"><label>Service Finder Title</label><input type="text" id="d-sf-heading" value="Service Finder"/></div>
+    <button class="dash-apply" onclick="applyHero()">Apply Changes</button>
+  </div>
+</div>
+
+<!-- ══ DASHBOARD: SHOP ══ -->
+<div class="dash-overlay" id="dash-shop">
+  <div class="dash-box">
+    <button class="dash-close" onclick="closeDash('dash-shop')"><i class="fa fa-times"></i></button>
+    <div class="dash-title">Auto Parts Shop</div>
+    <div class="dash-sub">Manage your products for sale.</div>
+    <div id="shop-dash-list"></div>
+    <button class="add-item-btn" onclick="addShopItem()">+ Add Product</button>
+    <button class="dash-apply" onclick="applyShop()">Save Products</button>
+  </div>
+</div>
+
+<!-- ══ DASHBOARD: WHY ══ -->
+<div class="dash-overlay" id="dash-why">
+  <div class="dash-box">
+    <button class="dash-close" onclick="closeDash('dash-why')"><i class="fa fa-times"></i></button>
+    <div class="dash-title">Why Choose Us</div>
+    <div class="dash-sub">Edit section content and photo.</div>
+    <div class="dash-group"><label>Section Title</label><input type="text" id="d-why-title" value="Why Choose Us?"/></div>
+    <div class="dash-group"><label>Subtext</label><input type="text" id="d-why-sub" value="We combine decades of experience with cutting-edge technology."/></div>
+    <div class="dash-group"><label>Photo URL</label><input type="text" id="d-why-img" value="https://images.unsplash.com/photo-1599256872237-5dcc0fbe9668?w=800&q=80"/></div>
+    <div class="dash-group"><label>Stat Number (e.g. 15+)</label><input type="text" id="d-why-stat-num" value="15+"/></div>
+    <div class="dash-group"><label>Stat Label</label><input type="text" id="d-why-stat-label" value="Years Experience"/></div>
+    <button class="dash-apply" onclick="applyWhy()">Apply Changes</button>
+  </div>
+</div>
+
+<script>
+/* ── DATA ── */
+let shopItems = [
+  {name:"Performance Air Filter",price:"$49.99",wa:"https://wa.me/15551234567",img:"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80"},
+  {name:"Synthetic Engine Oil 5W-40",price:"$34.99",wa:"https://wa.me/15551234567",img:"https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=400&q=80"},
+  {name:"Brake Pad Set – Front",price:"$89.99",wa:"https://wa.me/15551234567",img:"https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=400&q=80"},
+  {name:"LED Headlight Bulb Kit",price:"$59.99",wa:"https://wa.me/15551234567",img:"https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&q=80"},
+  {name:"OBD2 Diagnostic Scanner",price:"$129.99",wa:"https://wa.me/15551234567",img:"https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=400&q=80"},
+  {name:"Spark Plug Set (4pcs)",price:"$44.99",wa:"https://wa.me/15551234567",img:"https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=400&q=80"},
+  {name:"Timing Belt Kit",price:"$119.99",wa:"https://wa.me/15551234567",img:"https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=400&q=80"},
+  {name:"Radiator Coolant 5L",price:"$29.99",wa:"https://wa.me/15551234567",img:"https://images.unsplash.com/photo-1558618047-f4e8c7a8d7a2?w=400&q=80"},
+  {name:"Car Mat Set – Premium",price:"$74.99",wa:"https://wa.me/15551234567",img:"https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=400&q=80"}
+];
+
+/* ── RENDER SHOP ── */
+function renderShop(){
+  const grid=document.getElementById('shop-grid');
+  grid.innerHTML='';
+  shopItems.forEach((item,i)=>{
+    grid.innerHTML+=`
+    <div class="shop-card">
+      <div style="width:100%;aspect-ratio:4/3;overflow:hidden;">
+        <img src="${item.img}" alt="${item.name}" style="width:100%;height:100%;object-fit:cover;" onerror="this.src='https://via.placeholder.com/400x300/1a1a1a/555?text=Product'"/>
+      </div>
+      <div class="shop-info">
+        <div class="shop-name">${item.name}</div>
+        <div class="shop-price">${item.price}</div>
+        <button class="btn-whatsapp" onclick="window.open('${item.wa}','_blank')">
+          <i class="fab fa-whatsapp"></i> Order via WhatsApp
+        </button>
+      </div>
+    </div>`;
+  });
+}
+
+function renderShopDash(){
+  const list=document.getElementById('shop-dash-list');
+  list.innerHTML='';
+  shopItems.forEach((item,i)=>{
+    list.innerHTML+=`
+    <div class="shop-dash-item" id="sdi-${i}">
+      <div style="font-size:12px;color:var(--accent);font-weight:600;">Product ${i+1} <button onclick="removeShopItem(${i})" style="background:none;border:none;color:var(--red);cursor:pointer;float:right;font-size:11px;">✕ Remove</button></div>
+      <div class="shop-dash-item-row">
+        <div><label>Name</label><input type="text" id="si-name-${i}" value="${item.name}"/></div>
+        <div><label>Price</label><input type="text" id="si-price-${i}" value="${item.price}"/></div>
+      </div>
+      <div style="margin-top:8px;"><label style="font-size:11px;color:var(--grey);">Image URL</label><input type="text" id="si-img-${i}" value="${item.img}" style="width:100%;background:#111;border:1px solid #333;color:var(--white);padding:7px 10px;border-radius:3px;font-size:12px;margin-top:4px;"/></div>
+      <div style="margin-top:8px;"><label style="font-size:11px;color:var(--grey);">WhatsApp Link</label><input type="text" id="si-wa-${i}" value="${item.wa}" style="width:100%;background:#111;border:1px solid #333;color:var(--white);padding:7px 10px;border-radius:3px;font-size:12px;margin-top:4px;"/></div>
+    </div>`;
+  });
+}
+
+function addShopItem(){
+  shopItems.push({name:"New Product",price:"$0.00",wa:"https://wa.me/",img:""});
+  renderShopDash();
+}
+function removeShopItem(i){shopItems.splice(i,1);renderShopDash();}
+function applyShop(){
+  shopItems.forEach((_,i)=>{
+    shopItems[i].name=document.getElementById(`si-name-${i}`).value;
+    shopItems[i].price=document.getElementById(`si-price-${i}`).value;
+    shopItems[i].img=document.getElementById(`si-img-${i}`).value;
+    shopItems[i].wa=document.getElementById(`si-wa-${i}`).value;
+  });
+  renderShop();
+  closeDash('dash-shop');
+}
+
+/* ── PROMO ── */
+function applyPromo(){
+  document.getElementById('promo-loc-text').textContent=document.getElementById('d-promo-loc').value;
+  document.getElementById('promo-phone-text').textContent=document.getElementById('d-promo-phone').value;
+  document.getElementById('promo-fb').href=document.getElementById('d-promo-fb').value;
+  document.getElementById('promo-ig').href=document.getElementById('d-promo-ig').value;
+  document.getElementById('promo-wa').href=document.getElementById('d-promo-wa').value;
+  document.getElementById('promo-yt').href=document.getElementById('d-promo-yt').value;
+  document.getElementById('promo-tk').href=document.getElementById('d-promo-tk').value;
+  const bar=document.getElementById('promo-bar');
+  bar.style.background=document.getElementById('d-promo-bg').value;
+  bar.style.color=document.getElementById('d-promo-color').value;
+  bar.style.fontFamily=document.getElementById('d-promo-font').value;
+  bar.style.fontSize=document.getElementById('d-promo-size').value+'px';
+  closeDash('dash-promo');
+}
+
+/* ── HEADER ── */
+function applyHeader(){
+  const url=document.getElementById('d-logo-url').value;
+  const ld=document.getElementById('logo-display');
+  if(url){ld.innerHTML=`<img src="${url}" style="width:100%;height:100%;object-fit:contain;border-radius:4px;" onerror="this.parentElement.innerHTML='<span style=font-family:var(--font-display);font-size:11px;color:var(--accent);text-align:center;line-height:1.2>YOUR<br>LOGO</span>'"/>`;}
+  document.getElementById('header-logo-text').childNodes[0].textContent=document.getElementById('d-brand1').value;
+  document.getElementById('header-logo-span').textContent=document.getElementById('d-brand2').value;
+  document.getElementById('header-phone-text').textContent=document.getElementById('d-hdr-phone').value;
+  document.documentElement.style.setProperty('--accent',document.getElementById('d-accent').value);
+  closeDash('dash-header');
+}
+
+/* ── NAV ── */
+function applyNav(){
+  const ids=[['nav-repair','nav-l1','nav-u1'],['nav-maintenance','nav-l2','nav-u2'],['nav-accessories','nav-l3','nav-u3'],['nav-findus','nav-l4','nav-u4'],['nav-clients','nav-l5','nav-u5']];
+  ids.forEach(([elId,lId,uId])=>{
+    const el=document.getElementById(elId);
+    el.textContent=document.getElementById(lId).value;
+    el.href=document.getElementById(uId).value;
+  });
+  closeDash('dash-nav');
+}
+
+/* ── HERO ── */
+function applyHero(){
+  const bgUrl=document.getElementById('d-hero-bg').value;
+  document.getElementById('hero-bg').style.backgroundImage=`url('${bgUrl}')`;
+  document.getElementById('hero-badge-text').textContent=document.getElementById('d-hero-badge').value;
+  document.getElementById('hero-heading').textContent=document.getElementById('d-hero-h').value;
+  document.getElementById('hero-sub').textContent=document.getElementById('d-hero-sub').value;
+  document.getElementById('hero-btn1').textContent=document.getElementById('d-hero-btn1').value;
+  document.getElementById('hero-btn2').textContent=document.getElementById('d-hero-btn2').value;
+  document.getElementById('sf-heading').textContent=document.getElementById('d-sf-heading').value;
+  closeDash('dash-hero');
+}
+
+/* ── WHY ── */
+function applyWhy(){
+  document.getElementById('why-title').innerHTML=document.getElementById('d-why-title').value;
+  document.getElementById('why-sub').textContent=document.getElementById('d-why-sub').value;
+  document.getElementById('why-img').src=document.getElementById('d-why-img').value;
+  document.getElementById('why-stat-num').textContent=document.getElementById('d-why-stat-num').value;
+  document.getElementById('why-stat-label').textContent=document.getElementById('d-why-stat-label').value;
+  closeDash('dash-why');
+}
+
+/* ── BOOKING ── */
+function openBooking(){document.getElementById('booking-modal').classList.add('open');}
+function closeBooking(){document.getElementById('booking-modal').classList.remove('open');}
+function submitBooking(){
+  alert('✅ Booking submitted! We will contact you shortly to confirm your appointment.');
+  closeBooking();
+}
+function handleUpload(input){
+  const prev=document.getElementById('upload-preview');
+  prev.innerHTML='';
+  Array.from(input.files).forEach(file=>{
+    const url=URL.createObjectURL(file);
+    if(file.type.startsWith('image/')){
+      prev.innerHTML+=`<img src="${url}" style="width:70px;height:70px;object-fit:cover;border-radius:3px;border:1px solid #333;"/>`;
+    } else {
+      prev.innerHTML+=`<div style="width:70px;height:70px;background:#1e1e1e;border-radius:3px;border:1px solid #333;display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--grey);text-align:center;padding:4px;">${file.name}</div>`;
+    }
+  });
+}
+
+/* ── DASH ── */
+function openDash(id){
+  if(id==='dash-shop')renderShopDash();
+  document.getElementById(id).classList.add('open');
+}
+function closeDash(id){document.getElementById(id).classList.remove('open');}
+document.querySelectorAll('.dash-overlay').forEach(el=>{el.addEventListener('click',e=>{if(e.target===el)el.classList.remove('open');});});
+document.getElementById('booking-modal').addEventListener('click',e=>{if(e.target===document.getElementById('booking-modal'))closeBooking();});
+
+/* ── NAV MOBILE ── */
+function toggleNav(){document.getElementById('nav-links').classList.toggle('open');}
+function closeNav(){document.getElementById('nav-links').classList.remove('open');}
+
+/* ── SMOOTH SCROLL ── */
+function scrollToSection(id){
+  document.getElementById(id)?.scrollIntoView({behavior:'smooth'});
+  closeNav();
+}
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',function(e){
+    const target=this.getAttribute('href').slice(1);
+    if(target&&document.getElementById(target)){
+      e.preventDefault();
+      document.getElementById(target).scrollIntoView({behavior:'smooth'});
+      closeNav();
+    }
+  });
+});
+
+/* ── INIT ── */
+renderShop();
+</script>
+</body>
+</html>
